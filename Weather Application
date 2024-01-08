@@ -1,7 +1,7 @@
-import requests #pip install requests
-import json #
+import requests
+import json
 import datetime
-import win32com.client #pip install pywin32
+import win32com.client
 
 
 def get_weather_data(city):

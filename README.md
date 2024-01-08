@@ -1,2 +1,2 @@
 # Hello World!!!!
-# I am Bobby Sadlapurkar & this plave will be all about my Python Projects that I have developed.
+# I am Bobby Sadlapurkar & this GitHub will be all about the Python Projects that I have developed.

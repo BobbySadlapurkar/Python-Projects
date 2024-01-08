@@ -1,0 +1,33 @@
+import speech_recognition as sr #pip install SpeechRecognition
+from googletrans import Translator #pip install googletrans
+from gtts import gTTS #pip install gTTS
+from playsound import playsound #pip install playsound
+import os
+
+r = sr.Recognizer()
+
+while True:
+
+    with sr.Microphone() as source:
+        print("Speak Now: ")
+        audio = r.listen(source)
+
+        try:
+            speech_text = r.recognize_google(audio)
+            print(speech_text)
+            if speech_text == "exit":
+                break
+
+
+        except sr.UnknownValueError:
+            print("Could not understand")
+        except sr.RequestError:
+            print("Connection Error")
+
+        translated_text = Translator().translate(speech_text, dest='hi').text
+        print(translated_text)
+
+        voice = gTTS(translated_text, lang='hi')
+        voice.save("voice.mp3")
+        playsound("voice.mp3")
+        os.remove("voice.mp3")
